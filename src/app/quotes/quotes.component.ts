@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-quotes',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { 
+
+    this.fetchData()
+  }
+
+  fetchData=()=>{
+    this.myapi.viewQuotes().subscribe(
+      (data)=>{
+        this.quotesData=data
+      }
+    )
+  }
+
+  quotesData:any={}
 
   ngOnInit(): void {
   }
