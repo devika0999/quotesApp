@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <div class="row g-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <app-navbar></app-navbar>
+        </div>
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">QUOTE </th>
+                        <th scope="col">AUTHOR</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of quotesData.quotes">
+                        <td>{{i.id}}</td>
+                        <td>{{i.quote}}</td>
+                        <td>{{i.author}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
